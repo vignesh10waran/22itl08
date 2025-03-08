@@ -15,3 +15,6 @@ jobs:
 
      - name: Docker Images
        run: docker images
+       with:
+         username: ${{ vars.DOCKERHUB_USERNAME }}
+         password: ${{ secrets.DOCKERHUB_TOKEN }}
