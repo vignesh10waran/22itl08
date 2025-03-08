@@ -1,0 +1,18 @@
+name: docker-pipline.yml-22itl08
+on: push
+jobs:
+  my-jobs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: print-22itl08
+        run: echo "Hello-World-22itl08"
+
+      - name: Checkout
+        user: actions/checkout@v1
+
+      - name: Docker Build
+        user: docker build -t vignesh/ml_model-22itl08 .
+
+      - name: Docker Image
+        run: docker image
