@@ -1,18 +1,17 @@
-name: docker-pipline.yml-22itl08
+name: docker-pipeline-vignesh
 on: push
 jobs:
-  my-jobs:
-    runs-on: ubuntu-latest
+ docker-job:
+   runs-on: ubuntu-latest
+   steps:
+     - name: print-22itl08
+       run: echo "Hello World - 22ITL08"
 
-    steps:
-      - name: print-22itl08
-        run: echo "Hello-World-22itl08"
+     - name: checkout
+       uses: actions/checkout@v4
 
-      - name: Checkout
-        user: actions/checkout@v1
+     - name: Docker Build
+       run: docker build -t rakesh759/ml-model-22itl08 .
 
-      - name: Docker Build
-        user: docker build -t vignesh/ml_model-22itl08 .
-
-      - name: Docker Image
-        run: docker image
+     - name: Docker Images
+       run: docker images
